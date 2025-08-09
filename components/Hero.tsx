@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { openChatModal } from "@/lib/chatModal";
 import { useEffect, useRef, useState } from "react";
 import Container from "@/components/Container";
 
@@ -49,17 +51,37 @@ export default function Hero() {
         />
       )}
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-black/0" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
       <Container>
-        <div className="relative z-10 flex h-[80svh] min-h-[520px] items-center">
+          <div className="relative z-10 flex h-[80svh] min-h-[520px] items-center">
           <div className="max-w-2xl">
-            <h1 id="hero-title" className="text-4xl/tight sm:text-5xl/tight md:text-[clamp(2.5rem,6vw,4rem)] font-serif font-semibold text-white">
+            <Image
+              src="/images/AC%20Icon%20White.png"
+              alt="Antiguo Casino mark"
+              width={64}
+              height={64}
+              priority
+              className="h-12 w-auto mb-4 opacity-95"
+            />
+            <h1
+              id="hero-title"
+              className="text-5xl/none sm:text-6xl/none md:text-[clamp(3.125rem,7.5vw,5rem)] md:leading-[1.05] font-serif font-semibold text-white tracking-tighter"
+            >
               Your dream event starts here.
             </h1>
-            <p className="mt-4 text-base sm:text-lg text-white/90">
-              Welcome to Antiguo Casino de Puerto Rico.
+            <p className="mt-4 text-lg sm:text-xl text-white/90">
+              Welcome to Antiguo Casino of Puerto Rico.
             </p>
+            <div className="mt-6">
+              <button
+                type="button"
+                onClick={() => openChatModal()}
+                className="inline-flex items-center justify-center rounded-md bg-[#434343] px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#2f2f2f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+              >
+                Start Here
+              </button>
+            </div>
           </div>
         </div>
       </Container>

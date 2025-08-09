@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ChatModal from "@/components/ChatModal";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -45,6 +47,8 @@ export default function RootLayout({
         </a>
         <Navbar />
         <main id="main">{children}</main>
+        <ChatModal />
+        <Footer />
       </body>
     </html>
   );

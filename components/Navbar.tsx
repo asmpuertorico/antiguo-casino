@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Container from "@/components/Container";
+import Image from "next/image";
+import { openChatModal } from "@/lib/chatModal";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -22,15 +24,19 @@ export default function Navbar() {
     <header className={`sticky top-0 z-40 ${scrolled ? "shadow-sm" : ""}`}>
       <nav
         aria-label="Main navigation"
-        className={`nav-blur border-b border-border/50 transition-colors duration-300`}
+        className={`bg-[#cec9c4] text-[#434343] border-b border-border/50 transition-colors duration-300`}
       >
         <Container className="flex items-center justify-between h-16">
           <div className="flex items-center gap-8">
-            <Link href="#" className="text-sm font-semibold tracking-widest">
-              <span className="sr-only">Home</span>
-              <span aria-hidden className="text-foreground">
-                ANTIGUO CASINO
-              </span>
+            <Link href="#" aria-label="Home" className="block">
+              <Image
+                src="/images/AC%20LOGO%20HOR.png"
+                alt="Antiguo Casino logo"
+                width={180}
+                height={32}
+                className="h-8 w-auto"
+                priority
+              />
             </Link>
           </div>
 
@@ -45,15 +51,16 @@ export default function Navbar() {
             <Link href="#" className={navLinkClasses}>
               Guide
             </Link>
-            <Link href="#" className={navLinkClasses}>
+            <button type="button" onClick={() => openChatModal()} className={navLinkClasses}>
               Contact
-            </Link>
-            <Link
-              href="#"
-              className="inline-flex items-center justify-center rounded-md bg-indigo px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-contrast focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+            </button>
+            <button
+              type="button"
+              onClick={() => openChatModal()}
+              className="inline-flex items-center justify-center rounded-md bg-[#434343] px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#2f2f2f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
             >
               Plan Your Event
-            </Link>
+            </button>
           </div>
 
           {/* Mobile toggle */}
@@ -63,7 +70,7 @@ export default function Navbar() {
               aria-controls="primary-menu"
               aria-expanded={open}
               onClick={() => setOpen((p) => !p)}
-              className="inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+              className="inline-flex items-center justify-center rounded-md p-2 text-[#434343] hover:bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
             >
               <span className="sr-only">Open main menu</span>
               <svg
@@ -102,16 +109,26 @@ export default function Navbar() {
               <Link href="#" className={navLinkClasses} onClick={() => setOpen(false)}>
                 Guide
               </Link>
-              <Link href="#" className={navLinkClasses} onClick={() => setOpen(false)}>
+              <button
+                type="button"
+                className={navLinkClasses}
+                onClick={() => {
+                  setOpen(false);
+                  openChatModal();
+                }}
+              >
                 Contact
-              </Link>
-              <Link
-                href="#"
-                className="mt-2 inline-flex items-center justify-center rounded-md bg-indigo px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-contrast focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-                onClick={() => setOpen(false)}
+              </button>
+              <button
+                type="button"
+                className="mt-2 inline-flex items-center justify-center rounded-md bg-[#434343] px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#2f2f2f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                onClick={() => {
+                  setOpen(false);
+                  openChatModal();
+                }}
               >
                 Plan Your Event
-              </Link>
+              </button>
             </div>
           </Container>
         </div>

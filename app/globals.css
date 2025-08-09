@@ -54,8 +54,8 @@ h1, h2, h3, h4 {
 }
 
 @keyframes marquee-down {
-  from { transform: translateY(0); }
-  to { transform: translateY(50%); }
+  from { transform: translateY(-50%); }
+  to { transform: translateY(0); }
 }
 
 .animate-marquee-up {
@@ -96,19 +96,20 @@ h1, h2, h3, h4 {
 
 /* Gradient mask for fade at top/bottom */
 .mask-fade-y {
+  /* soft white -> transparent fade top/bottom */
   -webkit-mask-image: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 1) 10%,
-    rgba(0, 0, 0, 1) 90%,
-    rgba(0, 0, 0, 0) 100%
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 10%,
+    rgba(255, 255, 255, 1) 90%,
+    rgba(255, 255, 255, 0) 100%
   );
   mask-image: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 1) 10%,
-    rgba(0, 0, 0, 1) 90%,
-    rgba(0, 0, 0, 0) 100%
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 10%,
+    rgba(255, 255, 255, 1) 90%,
+    rgba(255, 255, 255, 0) 100%
   );
 }
 
@@ -116,4 +117,123 @@ h1, h2, h3, h4 {
 .nav-blur {
   background-color: color-mix(in oklab, var(--background) 70%, transparent);
   backdrop-filter: blur(10px);
+}
+
+/* Animated conic-gradient glow border */
+@keyframes spin-slow {
+  to { transform: rotate(1turn); }
+}
+
+.glow-frame {
+  position: relative;
+  border-radius: 1rem; /* match rounded-2xl */
+}
+
+.glow-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px; /* border thickness */
+  border-radius: inherit;
+  background: conic-gradient(
+    from 0deg,
+    rgba(255,255,255,0.85),
+    #cec9c4,
+    rgba(255,255,255,0.85)
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: spin-slow 10s linear infinite;
+  filter: blur(4px);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.glow-inner {
+  position: relative;
+  border-radius: inherit;
+  background: #cec9c4;
+}
+
+/* Animated glow border for buttons */
+.glow-btn {
+  position: relative;
+  border-radius: 0.5rem; /* rounded-md */
+}
+
+.glow-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--border-angle), rgba(255,255,255,0.95), #cec9c4, rgba(255,255,255,0.95));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: border-rotate 6s linear infinite;
+  filter: blur(3px) drop-shadow(0 0 10px rgba(255,255,255,0.35));
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+@property --border-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: '<angle>';
+}
+
+@keyframes border-rotate {
+  to { --border-angle: 360deg; }
+}
+
+.animate-border {
+  animation: border-rotate 4s linear infinite;
+}
+
+/* Ibelick-style animated gradient borders */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate {
+  to { --angle: 360deg; }
+}
+
+.gradient-border {
+  /* container/card */
+  --inner-bg: #cec9c4;
+  border: 2px solid transparent;
+  border-radius: 1rem; /* rounded-2xl */
+  background:
+    linear-gradient(var(--inner-bg), var(--inner-bg)) padding-box,
+    conic-gradient(
+      from var(--angle),
+      color-mix(in oklab, #434343 60%, transparent) 80%,
+      #6366f1 86%, /* indigo-500 */
+      #a5b4fc 90%, /* indigo-300 */
+      #6366f1 94%,
+      color-mix(in oklab, #434343 60%, transparent)
+    ) border-box;
+  animation: rotate 6s linear infinite;
+}
+
+.gradient-border-btn {
+  --inner-bg: #434343;
+  border: 1px solid transparent;
+  border-radius: 0.5rem; /* rounded-md */
+  background:
+    linear-gradient(var(--inner-bg), var(--inner-bg)) padding-box,
+    conic-gradient(
+      from var(--angle),
+      #ef4444, /* red-500 */
+      #f59e0b, /* amber-500 */
+      #6366f1, /* indigo-500 */
+      #ef4444
+    ) border-box;
+  animation: rotate 6s linear infinite;
+  box-shadow: 0 0 16px rgba(206, 201, 196, 0.35);
 }
