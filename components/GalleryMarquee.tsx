@@ -59,7 +59,7 @@ export default function GalleryMarquee({ imagesLeft, imagesRight, images }: Gall
         <h2 id="gallery-title" className="text-3xl sm:text-4xl md:text-5xl font-serif font-semibold">
           Live what you imagine
         </h2>
-        <p className="mt-4 max-w-lg text-base sm:text-lg text-foreground/80">
+        <p className="mt-4 max-w-lg text-base sm:text-lg text-[#434343]">
           Our venue is customizable to fit your needs. From private and intimate spaces to an
           exquisite ballroom with square footage to spare.
         </p>

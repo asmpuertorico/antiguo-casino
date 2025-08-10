@@ -39,6 +39,25 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased bg-background text-foreground">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(){
+                window.chatbotConfig = { chatbotId: 'cme4th9bo0001carxespro39n', apiUrl: 'https://dashboard.getlinkai.com' };
+                var s=document.createElement('script');
+                s.src=window.chatbotConfig.apiUrl + '/chatbot.js?v=' + Date.now();
+                s.onload=function(){};
+                s.onerror=function(){
+                  fetch(window.chatbotConfig.apiUrl + '/chatbot.js')
+                    .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status+': '+r.statusText); return r.text(); })
+                    .then(function(t){ (0, eval)(t); })
+                    .catch(function(){});
+                };
+                document.head.appendChild(s);
+              })();
+            `,
+          }}
+        />
         <a
           href="#main"
           className="skip-link sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-white focus:text-black dark:focus:bg-black dark:focus:text-white focus:px-4 focus:py-2 focus:rounded-md"

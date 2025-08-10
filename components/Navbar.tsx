@@ -18,7 +18,7 @@ export default function Navbar() {
   }, []);
 
   const navLinkClasses =
-    "px-3 py-2 rounded-md text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/70 hover:text-indigo-contrast";
+    "px-3 py-2 rounded-md text-sm font-medium focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/70 hover:text-black";
 
   return (
     <header className={`sticky top-0 z-40 ${scrolled ? "shadow-sm" : ""}`}>
@@ -42,13 +42,13 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-6">
-            <Link href="#" className={navLinkClasses}>
+            <Link href="/Antiguo-Casino-Sales-Kit-2020.pdf" className={navLinkClasses} target="_blank">
               Sales Kit
             </Link>
-            <Link href="#" className={navLinkClasses}>
+            <Link href="/Antiguo-casino-menu.pdf" className={navLinkClasses} target="_blank">
               Menu
             </Link>
-            <Link href="#" className={navLinkClasses}>
+            <Link href="/Antiguo-Casino-Event-Planning-Guide-2025.pdf" className={navLinkClasses} target="_blank">
               Guide
             </Link>
             <button type="button" onClick={() => openChatModal()} className={navLinkClasses}>
@@ -100,13 +100,13 @@ export default function Navbar() {
         >
           <Container>
             <div className="py-3 flex flex-col gap-1">
-              <Link href="#" className={navLinkClasses} onClick={() => setOpen(false)}>
+              <Link href="/Antiguo-Casino-Sales-Kit-2020.pdf" className={navLinkClasses} target="_blank" onClick={() => setOpen(false)}>
                 Sales Kit
               </Link>
-              <Link href="#" className={navLinkClasses} onClick={() => setOpen(false)}>
+              <Link href="/Antiguo-casino-menu.pdf" className={navLinkClasses} target="_blank" onClick={() => setOpen(false)}>
                 Menu
               </Link>
-              <Link href="#" className={navLinkClasses} onClick={() => setOpen(false)}>
+              <Link href="/Antiguo-Casino-Event-Planning-Guide-2025.pdf" className={navLinkClasses} target="_blank" onClick={() => setOpen(false)}>
                 Guide
               </Link>
               <button
