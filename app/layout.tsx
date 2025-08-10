@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/video/poster.jpg",
+        url: "/images/get-inspired.png",
         width: 1200,
         height: 630,
         alt: "Antiguo Casino hero",
