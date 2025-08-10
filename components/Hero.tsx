@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { openChatModal } from "@/lib/chatModal";
 import { useEffect, useRef, useState } from "react";
 import Container from "@/components/Container";

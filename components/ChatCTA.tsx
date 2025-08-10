@@ -1,14 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
 import { openChatModal } from "@/lib/chatModal";
 import Container from "@/components/Container";
 
 export default function ChatCTA() {
-  const [open, setOpen] = useState(false);
-  const overlayRef = useRef<HTMLDivElement | null>(null);
-
   return (
     <section aria-labelledby="chat-cta-title" className="py-12 bg-[#434343] text-white">
       <Container>
@@ -34,8 +30,7 @@ export default function ChatCTA() {
             <button
               type="button"
               onClick={() => openChatModal()}
-              className="gradient-border-btn inline-flex items-center gap-2 rounded-md bg-white px-5 py-2.5 text-sm font-semibold text-[#434343] shadow-sm hover:bg-[#f2f2f2] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-              style={{ ["--inner-bg" as any]: "#ffffff" }}
+              className="gradient-border-btn btn-inner-white inline-flex items-center gap-2 rounded-md bg-white px-5 py-2.5 text-sm font-semibold text-[#434343] shadow-sm hover:bg-[#f2f2f2] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
             >
               <Image src="/images/brand-line.svg" alt="Chat" width={18} height={18} className="opacity-90" />
               <span>Chat with us</span>
