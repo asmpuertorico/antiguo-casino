@@ -132,24 +132,19 @@ export default function Footer() {
               type="button"
               onClick={() => {
                 if (typeof window === 'undefined') return;
-                const os: any = (window as any).Osano;
-                const cm = os?.cm;
-                if (cm && typeof cm.open === 'function') {
-                  cm.open();
-                  return;
-                }
-                if (cm && typeof cm.showDrawer === 'function') {
-                  cm.showDrawer();
-                  return;
-                }
-                if (cm && typeof cm.managePreferences === 'function') {
-                  cm.managePreferences();
-                  return;
-                }
-                if (cm && typeof cm.toggle === 'function') {
-                  cm.toggle();
-                  return;
-                }
+                type OsanoCM = {
+                  open?: () => void;
+                  showDrawer?: () => void;
+                  managePreferences?: () => void;
+                  toggle?: () => void;
+                };
+                type OsanoGlobal = { cm?: OsanoCM };
+                const osano: OsanoGlobal | undefined = (window as unknown as { Osano?: OsanoGlobal }).Osano;
+                const cm: OsanoCM | undefined = osano?.cm;
+                if (cm?.open) { cm.open(); return; }
+                if (cm?.showDrawer) { cm.showDrawer(); return; }
+                if (cm?.managePreferences) { cm.managePreferences(); return; }
+                if (cm?.toggle) { cm.toggle(); return; }
                 const trigger = document.querySelector('[data-osano-cm-widget], .osano-cm-widget') as HTMLElement | null;
                 trigger?.click();
               }}
