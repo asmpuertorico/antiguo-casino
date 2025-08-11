@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Container from "@/components/Container";
 
@@ -113,6 +115,57 @@ export default function Footer() {
               height={56}
               className="h-8 w-auto"
             />
+          </div>
+        </div>
+        <div className="pb-8">
+          <div className="text-sm text-[#2aa198] flex flex-col items-center gap-2 sm:flex-row sm:justify-center sm:gap-3">
+            <a
+              href="https://www.asmglobal.com/p/other/privacy-policy-23"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              Privacy Policy
+            </a>
+            <span className="hidden sm:inline">|</span>
+            <button
+              type="button"
+              onClick={() => {
+                if (typeof window === 'undefined') return;
+                const os: any = (window as any).Osano;
+                const cm = os?.cm;
+                if (cm && typeof cm.open === 'function') {
+                  cm.open();
+                  return;
+                }
+                if (cm && typeof cm.showDrawer === 'function') {
+                  cm.showDrawer();
+                  return;
+                }
+                if (cm && typeof cm.managePreferences === 'function') {
+                  cm.managePreferences();
+                  return;
+                }
+                if (cm && typeof cm.toggle === 'function') {
+                  cm.toggle();
+                  return;
+                }
+                const trigger = document.querySelector('[data-osano-cm-widget], .osano-cm-widget') as HTMLElement | null;
+                trigger?.click();
+              }}
+              className="hover:underline"
+            >
+              Cookie Preferences
+            </button>
+            <span className="hidden sm:inline">|</span>
+            <a
+              href="https://www.asmglobal.com/p/other/privacy-request"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              Do Not Sell or Share My Info
+            </a>
           </div>
         </div>
       </Container>

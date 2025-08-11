@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
-/* Theme variables */
+/* Theme variables (force light theme) */
 :root {
-  --background: #0f0f10; /* neutral background */
-  --foreground: #f5f5f4; /* off-white text */
-  --muted: #1a1b1d;
-  --border: #26272a;
+  --background: #fafafa; /* light background */
+  --foreground: #0a0a0a; /* dark text */
+  --muted: #f2f2f2;
+  --border: #e6e6e6;
   --indigo: #4f46e5; /* indigo-600 */
   --indigo-contrast: #6366f1; /* contrast indigo */
   --accent: var(--indigo);
@@ -14,15 +14,6 @@
     Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol";
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #fafafa;
-    --foreground: #0a0a0a;
-    --muted: #f2f2f2;
-    --border: #e6e6e6;
-  }
 }
 
 @theme inline {
@@ -117,6 +108,15 @@ h1, h2, h3, h4 {
 .nav-blur {
   background-color: color-mix(in oklab, var(--background) 70%, transparent);
   backdrop-filter: blur(10px);
+}
+
+/* Move Osano cookie widget to bottom-left to avoid chat overlap */
+.osano-cm-widget {
+  right: auto !important;
+  left: 16px !important;
+  bottom: 16px !important;
+  top: auto !important;
+  z-index: 60 !important;
 }
 
 /* Animated conic-gradient glow border */

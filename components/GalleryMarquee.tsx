@@ -65,7 +65,9 @@ export default function GalleryMarquee({ imagesLeft, imagesRight, images }: Gall
         </p>
         <div className="mt-8">
           <a
-            href="#"
+            href="/Antiguo-Casino-Sales-Kit-2020.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-md bg-[#434343] px-5 py-3 text-base font-semibold text-white shadow-sm hover:bg-[#2f2f2f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
           >
             Sales Kit

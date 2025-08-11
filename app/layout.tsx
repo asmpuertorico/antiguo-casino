@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -39,6 +40,22 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased bg-background text-foreground">
+        <Script
+          src="https://cmp.osano.com/AzyhRbU0mpbR52aP8/e3e75517-b96d-47b8-b96d-7e7347959bff/osano.js"
+          strategy="afterInteractive"
+        />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=UA-155016394-1"
+          strategy="afterInteractive"
+        />
+        <Script id="ga-ua-155016394-1" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);} 
+            gtag('js', new Date());
+            gtag('config', 'UA-155016394-1');
+          `}
+        </Script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
