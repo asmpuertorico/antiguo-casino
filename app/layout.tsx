@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ChatModal from "@/components/ChatModal";
+import PDFModal from "@/components/PDFModal";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -84,6 +85,7 @@ export default function RootLayout({
         <Navbar />
         <main id="main">{children}</main>
         <ChatModal />
+        <PDFModal />
         <Footer />
       </body>
     </html>

@@ -86,31 +86,10 @@ export default function Footer() {
           </div>
 
           {/* Partner logos */}
-          <div className="mt-2 flex items-center justify-center gap-6 opacity-90">
-            <Image
-              src="/images/ASM-Logo-Gray.png"
-              alt="ASM Global"
-              width={120}
-              height={48}
-              className="h-8 w-auto"
-            />
+          <div className="mt-2 flex items-center justify-center opacity-90">
             <Image
               src="/images/District-Logo.png"
               alt="District Puerto Rico"
-              width={56}
-              height={56}
-              className="h-8 w-auto"
-            />
-            <Image
-              src="/images/v2venueShield_Logo.png"
-              alt="Venue Shield"
-              width={56}
-              height={56}
-              className="h-8 w-auto"
-            />
-            <Image
-              src="/images/gbac_logo.png"
-              alt="GBAC Star Facility"
               width={56}
               height={56}
               className="h-8 w-auto"

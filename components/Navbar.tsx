@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Container from "@/components/Container";
 import Image from "next/image";
 import { openChatModal } from "@/lib/chatModal";
+import { openPDFModal } from "@/lib/pdfModal";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -42,15 +43,27 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-6">
-            <Link href="/Antiguo-Casino-Sales-Kit-2020.pdf" className={navLinkClasses} target="_blank">
+            <button 
+              type="button"
+              className={navLinkClasses}
+              onClick={() => openPDFModal({ pdfUrl: "/Antiguo-Casino-Sales-Kit-2020.pdf", title: "Sales Kit" })}
+            >
               Sales Kit
-            </Link>
-            <Link href="/Antiguo-casino-menu.pdf" className={navLinkClasses} target="_blank">
+            </button>
+            <button 
+              type="button"
+              className={navLinkClasses}
+              onClick={() => openPDFModal({ pdfUrl: "/Antiguo-casino-menu.pdf", title: "Menu" })}
+            >
               Menu
-            </Link>
-            <Link href="/Antiguo-Casino-Event-Planning-Guide-2025.pdf" className={navLinkClasses} target="_blank">
+            </button>
+            <button 
+              type="button"
+              className={navLinkClasses}
+              onClick={() => openPDFModal({ pdfUrl: "/Antiguo-Casino-Event-Planning-Guide-2025.pdf", title: "Event Planning Guide" })}
+            >
               Guide
-            </Link>
+            </button>
             <button type="button" onClick={() => openChatModal()} className={navLinkClasses}>
               Contact
             </button>
@@ -100,15 +113,36 @@ export default function Navbar() {
         >
           <Container>
             <div className="py-3 flex flex-col gap-1">
-              <Link href="/Antiguo-Casino-Sales-Kit-2020.pdf" className={navLinkClasses} target="_blank" onClick={() => setOpen(false)}>
+              <button
+                type="button"
+                className={navLinkClasses}
+                onClick={() => {
+                  setOpen(false);
+                  openPDFModal({ pdfUrl: "/Antiguo-Casino-Sales-Kit-2020.pdf", title: "Sales Kit" });
+                }}
+              >
                 Sales Kit
-              </Link>
-              <Link href="/Antiguo-casino-menu.pdf" className={navLinkClasses} target="_blank" onClick={() => setOpen(false)}>
+              </button>
+              <button
+                type="button"
+                className={navLinkClasses}
+                onClick={() => {
+                  setOpen(false);
+                  openPDFModal({ pdfUrl: "/Antiguo-casino-menu.pdf", title: "Menu" });
+                }}
+              >
                 Menu
-              </Link>
-              <Link href="/Antiguo-Casino-Event-Planning-Guide-2025.pdf" className={navLinkClasses} target="_blank" onClick={() => setOpen(false)}>
+              </button>
+              <button
+                type="button"
+                className={navLinkClasses}
+                onClick={() => {
+                  setOpen(false);
+                  openPDFModal({ pdfUrl: "/Antiguo-Casino-Event-Planning-Guide-2025.pdf", title: "Event Planning Guide" });
+                }}
+              >
                 Guide
-              </Link>
+              </button>
               <button
                 type="button"
                 className={navLinkClasses}

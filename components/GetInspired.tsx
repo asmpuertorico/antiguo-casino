@@ -36,7 +36,7 @@ export default function GetInspired({
                 Get Inspired
               </h3>
               <p className="mt-3 max-w-prose text-sm sm:text-base opacity-85">
-                Explore our venue from anywhere. Take a virtual tour or browse our curated Pinterest boards
+                Explore our venue from anywhere. Take a virtual tour or follow us on social media
                 for design inspiration and planning ideas.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-4">
@@ -66,6 +66,34 @@ export default function GetInspired({
                     />
                   </svg>
                   <span>Pinterest</span>
+                </Link>
+                <Link
+                  href="https://www.instagram.com/antiguocasinopr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-md border border-[#434343] px-5 py-2.5 text-sm font-semibold text-[#434343] hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                >
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden>
+                    <path
+                      fill="currentColor"
+                      d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5Zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5Zm5.25-3.25a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z"
+                    />
+                  </svg>
+                  <span>Instagram</span>
+                </Link>
+                <Link
+                  href="http://facebook.com/antiguocasinopr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-md border border-[#434343] px-5 py-2.5 text-sm font-semibold text-[#434343] hover:bg-white/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                >
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" aria-hidden>
+                    <path
+                      fill="currentColor"
+                      d="M22 12.06C22 6.48 17.52 2 11.94 2S2 6.48 2 12.06c0 5 3.66 9.14 8.44 9.94v-7.03H7.9V12.1h2.54V9.98c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.78h2.77l-.44 2.87h-2.33V22c4.78-.8 8.44-4.94 8.44-9.94Z"
+                    />
+                  </svg>
+                  <span>Facebook</span>
                 </Link>
               </div>
             </div>

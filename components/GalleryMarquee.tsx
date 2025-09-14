@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { openPDFModal } from "@/lib/pdfModal";
 
 type GalleryMarqueeProps = {
   imagesLeft?: string[];
@@ -64,14 +65,13 @@ export default function GalleryMarquee({ imagesLeft, imagesRight, images }: Gall
           exquisite ballroom with square footage to spare.
         </p>
         <div className="mt-8">
-          <a
-            href="/Antiguo-Casino-Sales-Kit-2020.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={() => openPDFModal({ pdfUrl: "/Antiguo-Casino-Sales-Kit-2020.pdf", title: "Sales Kit" })}
             className="inline-flex items-center justify-center rounded-md bg-[#434343] px-5 py-3 text-base font-semibold text-white shadow-sm hover:bg-[#2f2f2f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
           >
             Sales Kit
-          </a>
+          </button>
         </div>
       </div>
 
