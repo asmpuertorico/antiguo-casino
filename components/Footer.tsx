@@ -86,13 +86,20 @@ export default function Footer() {
           </div>
 
           {/* Partner logos */}
-          <div className="mt-2 flex items-center justify-center opacity-90">
+          <div className="mt-2 flex items-center justify-center gap-6 opacity-90">
             <Image
               src="/images/District-Logo.png"
               alt="District Puerto Rico"
-              width={56}
-              height={56}
-              className="h-8 w-auto"
+              width={80}
+              height={80}
+              className="h-12 w-auto"
+            />
+            <Image
+              src="/images/legends small.png"
+              alt="Legends"
+              width={80}
+              height={80}
+              className="h-12 w-auto"
             />
           </div>
         </div>
