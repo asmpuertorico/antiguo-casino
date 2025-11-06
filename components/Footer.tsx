@@ -106,12 +106,12 @@ export default function Footer() {
         <div className="pb-8">
           <div className="text-sm text-[#2aa198] flex flex-col items-center gap-2 sm:flex-row sm:justify-center sm:gap-3">
             <a
-              href="https://www.asmglobal.com/p/other/privacy-policy-23"
+              href="https://legendsglobal.com/privacy-notice/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:underline"
             >
-              Privacy Policy
+              Privacy Notice
             </a>
             <span className="hidden sm:inline">|</span>
             <button
@@ -140,12 +140,30 @@ export default function Footer() {
             </button>
             <span className="hidden sm:inline">|</span>
             <a
-              href="https://www.asmglobal.com/p/other/privacy-request"
+              href="https://yourprivacychoices.legendsglobal.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:underline"
             >
-              Do Not Sell or Share My Info
+              Your Privacy Choices
+            </a>
+            <span className="hidden sm:inline">|</span>
+            <a
+              href="https://legendsglobal.com/privacy-notice/#ad-choices"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              Ad Choices
+            </a>
+            <span className="hidden sm:inline">|</span>
+            <a
+              href="https://legendsglobal.com/terms-of-use/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              Terms of Use
             </a>
           </div>
         </div>
