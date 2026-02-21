@@ -29,7 +29,7 @@ export default function Navbar() {
       >
         <Container className="flex items-center justify-between h-16">
           <div className="flex items-center gap-8">
-            <Link href="#" aria-label="Home" className="block">
+            <Link href="/" aria-label="Home" className="block">
               <Image
                 src="/images/AC%20LOGO%20HOR.png"
                 alt="Antiguo Casino logo"
@@ -67,6 +67,9 @@ export default function Navbar() {
             <button type="button" onClick={() => openChatModal()} className={navLinkClasses}>
               Contact
             </button>
+            <Link href="/virtual-tour" className={navLinkClasses}>
+              Virtual Tour
+            </Link>
             <button
               type="button"
               onClick={() => openChatModal()}
@@ -112,7 +115,7 @@ export default function Navbar() {
           className={`${open ? "block" : "hidden"} md:hidden border-t border-border/50`}
         >
           <Container>
-            <div className="py-3 flex flex-col gap-1">
+            <div className="py-3 flex flex-col gap-1 items-center">
               <button
                 type="button"
                 className={navLinkClasses}
@@ -153,6 +156,13 @@ export default function Navbar() {
               >
                 Contact
               </button>
+              <Link
+                href="/virtual-tour"
+                className={navLinkClasses}
+                onClick={() => setOpen(false)}
+              >
+                Virtual Tour
+              </Link>
               <button
                 type="button"
                 className="mt-2 inline-flex items-center justify-center rounded-md bg-[#434343] px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#2f2f2f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
