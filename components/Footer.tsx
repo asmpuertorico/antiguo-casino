@@ -104,7 +104,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="pb-8">
-          <div className="text-sm text-[#2aa198] flex flex-col items-center gap-2 sm:flex-row sm:justify-center sm:gap-3">
+          <div className="text-sm text-[#434343] flex flex-col items-center gap-2 sm:flex-row sm:justify-center sm:gap-3">
             <a
               href="https://legendsglobal.com/privacy-notice/"
               target="_blank"

@@ -23,7 +23,7 @@ export default function GetInspired({
               <h3 id="get-inspired-title" className="font-serif text-3xl sm:text-4xl font-semibold">
                 Get Inspired
               </h3>
-              <p className="mt-3 max-w-prose text-sm sm:text-base opacity-85">
+              <p className="mt-3 max-w-prose text-sm sm:text-base">
                 Explore our venue from anywhere. Take a virtual tour or follow us on social media
                 for design inspiration and planning ideas.
               </p>

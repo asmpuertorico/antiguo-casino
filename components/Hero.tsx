@@ -24,7 +24,7 @@ export default function Hero() {
   }, [reducedMotion]);
 
   return (
-    <section aria-labelledby="hero-title" className="relative isolate h-[80svh] min-h-[520px] w-full overflow-hidden">
+    <section aria-labelledby="hero-title" className="relative isolate h-[80svh] min-h-[520px] w-full overflow-hidden bg-black">
       {!reducedMotion ? (
         <video
           ref={videoRef}
@@ -68,7 +68,7 @@ export default function Hero() {
             >
               Your dream event starts here.
             </h1>
-            <p className="mt-4 text-lg sm:text-xl text-white/90">
+            <p className="mt-4 text-lg sm:text-xl text-white">
               Welcome to Antiguo Casino of Puerto Rico.
             </p>
             <div className="mt-6">
