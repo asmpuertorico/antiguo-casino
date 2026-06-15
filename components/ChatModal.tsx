@@ -51,6 +51,22 @@ export default function ChatModal() {
             allow="microphone"
           />
         </div>
+        <div className="border-t border-neutral-200 px-4 py-3 text-center text-sm text-neutral-700 dark:border-neutral-700 dark:text-neutral-300">
+          <p className="mb-2 font-medium text-neutral-900 dark:text-neutral-100">Contact us directly</p>
+          <div className="flex flex-col items-center gap-1 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-4 sm:gap-y-1">
+            <a href="tel:+17876905482" className="hover:underline">
+              787.690.5482
+            </a>
+            <span className="hidden sm:inline text-neutral-400">|</span>
+            <a href="tel:+17873006736" className="hover:underline">
+              787.300.6736
+            </a>
+            <span className="hidden sm:inline text-neutral-400">|</span>
+            <a href="mailto:cmarrero@levyrestaurants.com" className="hover:underline">
+              cmarrero@levyrestaurants.com
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );

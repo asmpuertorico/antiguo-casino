@@ -60,7 +60,7 @@ export default function Navbar() {
             <button 
               type="button"
               className={navLinkClasses}
-              onClick={() => openPDFModal({ pdfUrl: "/Antiguo-Casino-Event-Planning-Guide-2025.pdf", title: "Event Planning Guide" })}
+              onClick={() => openPDFModal({ pdfUrl: "/Antiguo-Casino-Event-Planning-Guide-2025-2026.pdf", title: "Event Planning Guide" })}
             >
               Guide
             </button>
@@ -141,7 +141,7 @@ export default function Navbar() {
                 className={navLinkClasses}
                 onClick={() => {
                   setOpen(false);
-                  openPDFModal({ pdfUrl: "/Antiguo-Casino-Event-Planning-Guide-2025.pdf", title: "Event Planning Guide" });
+                  openPDFModal({ pdfUrl: "/Antiguo-Casino-Event-Planning-Guide-2025-2026.pdf", title: "Event Planning Guide" });
                 }}
               >
                 Guide
