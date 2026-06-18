@@ -46,7 +46,7 @@ export default function Navbar() {
             <button 
               type="button"
               className={navLinkClasses}
-              onClick={() => openPDFModal({ pdfUrl: "/Antiguo-Casino-Sales-Kit-2020.pdf", title: "Sales Kit" })}
+              onClick={() => openPDFModal({ pdfUrl: "/Antiguo-Casino-Sales-Kit-2026.pdf", title: "Sales Kit" })}
             >
               Sales Kit
             </button>
@@ -121,7 +121,7 @@ export default function Navbar() {
                 className={navLinkClasses}
                 onClick={() => {
                   setOpen(false);
-                  openPDFModal({ pdfUrl: "/Antiguo-Casino-Sales-Kit-2020.pdf", title: "Sales Kit" });
+                  openPDFModal({ pdfUrl: "/Antiguo-Casino-Sales-Kit-2026.pdf", title: "Sales Kit" });
                 }}
               >
                 Sales Kit
